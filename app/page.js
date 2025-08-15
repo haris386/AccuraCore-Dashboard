@@ -1,6 +1,6 @@
 import EverythingYouNeedSection from "@/components/everything-you-need-section";
 import Footer from "@/components/Footer";
-import LovedByPeople from "@/components/Loved-by-people.jsx";
+import LovedByPeople from "@/components/loved-by-people.jsx";
 import TheToolsSection from "@/components/the-tools-section";
 import { Button } from "@/components/ui/button";
 import WhatMakesAccurascoreDifferent from "@/components/WhatMakesAccurascoreDifferent";
