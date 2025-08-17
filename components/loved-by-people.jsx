@@ -85,7 +85,9 @@ export default function LovedByPeople() {
     setOpenFaq(openFaq === faqId ? null : faqId)
   }
   return (
-    <section className="py-20 bg-gray-50 relative overflow-hidden">
+    <section className="py-20 relative overflow-hidden" style={{
+    background: "linear-gradient(312deg, #faefe9 -17%, #ffffff 100%)"
+  }}>
       <div className="container mx-auto px-6 max-w-6xl mb-5">
         {/* First Row - Hero Section */}
         <div className="text-center mb-16">

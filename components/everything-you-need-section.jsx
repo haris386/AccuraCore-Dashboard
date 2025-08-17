@@ -63,7 +63,7 @@ export default function EverythingYouNeedSection() {
   const rightImage = allImages[rightImageIndex];
 
   return (
-    <section className="py-16 lg:py-20" style={{ backgroundColor: "#f4f0ed" }}>
+    <section className="py-16 lg:py-20" style={{paddingBottom:0, backgroundColor: "#f4f0ed" }}>
       <div className="w-full">
         {" "}
         <div

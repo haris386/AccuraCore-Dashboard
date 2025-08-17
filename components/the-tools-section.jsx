@@ -2,7 +2,13 @@
 
 export default function TheTosolsSection() {
   return (
-    <section className="py-16 lg:py-20 " style={{ backgroundColor: "#f4f0ed" }}>
+    <section
+  className="py-16 lg:py-20"
+style={{
+    background: "linear-gradient(50deg, #fbfcf8 43%, #e6f4f7 100%)"
+  }}
+>
+
       <div
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
         style={{ width: "80%" }}
@@ -33,7 +39,7 @@ export default function TheTosolsSection() {
           {/* RT Image */}
           <div
             className="rounded-2xl p-8 lg:p-10 flex items-center justify-center"
-            style={{ backgroundColor: "#fbfaf8", border: "3px solid white" }}
+            style={{ backgroundColor: "#fbfaf83d", border: "3px solid white" }}
           >
             <div className="relative w-full max-w-md">
               <img
