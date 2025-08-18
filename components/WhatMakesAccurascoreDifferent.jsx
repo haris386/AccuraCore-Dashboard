@@ -11,12 +11,13 @@ import {
   BarChart3,
 } from "lucide-react";
 
-export default function WhatMakesAccurascoreDifferent() {
+export default function WhatMakesAccurascoreDifferent({id}) {
   return (
     <section className="px-6 py-16" style={{ backgroundColor: "#f4f0ed" }}>
       <div className="max-w-7xl mx-auto" style={{ marginTop: "20rem" }}>
         {/* Top Section - 2 Columns */}
         <div
+        id= {id}
           className="grid lg:grid-cols-2 gap-12 mb-16"
           style={{ width: "90%", margin: "auto" }}
         >
@@ -93,7 +94,7 @@ export default function WhatMakesAccurascoreDifferent() {
         </div>
 
         {/* Bottom Section - How It Works */}
-        <div className="space-y-12" style={{ width: "90%", margin: "auto" }}>
+        <div id="how-section" className="space-y-12" style={{ width: "90%", margin: "auto" }}>
           {/* First Row - Heading */}
           <div className="text-left" style={{ marginTop: "5rem" }}>
             <h2 className="text-2xl text-gray-900 mb-2">

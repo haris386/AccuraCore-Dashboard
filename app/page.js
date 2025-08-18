@@ -1,3 +1,4 @@
+"use client"; 
 import EverythingYouNeedSection from "@/components/everything-you-need-section";
 import Footer from "@/components/Footer";
 import LovedByPeople from "@/components/loved-by-people.jsx";
@@ -31,29 +32,45 @@ export default function HomePage() {
               />
             </div>
 
-            {/* Navigation Menu */}
-            <div className="hidden md:flex items-center space-x-8">
-              <div className="flex items-center space-x-1 text-white hover:text-blue-200 cursor-pointer text-sm">
-                <span>About</span>
-                <ChevronDown className="w-4 h-4" />
-              </div>
-              <div className="flex items-center space-x-1 text-white hover:text-blue-200 cursor-pointer text-sm">
-                <span>Solutions</span>
-                <ChevronDown className="w-4 h-4" />
-              </div>
-              <div className="flex items-center space-x-1 text-white hover:text-blue-200 cursor-pointer text-sm">
-                <span>Solutions</span>
-                <ChevronDown className="w-4 h-4" />
-              </div>
-              <div className="flex items-center space-x-1 text-white hover:text-blue-200 cursor-pointer text-sm">
-                <span>Solutions</span>
-                <ChevronDown className="w-4 h-4" />
-              </div>
-              <div className="flex items-center space-x-1 text-white hover:text-blue-200 cursor-pointer text-sm">
-                <span>Solutions</span>
-                <ChevronDown className="w-4 h-4" />
-              </div>
-            </div>
+           {/* Navigation Menu */}
+<div className="hidden md:flex items-center space-x-8">
+  <button
+    onClick={() =>
+      document.getElementById("why-section")?.scrollIntoView({ behavior: "smooth" })
+    }
+    className="flex items-center space-x-1 text-white hover:text-blue-200 cursor-pointer text-sm"
+  >
+    <span>Why</span>
+  </button>
+
+  <button
+    onClick={() =>
+      document.getElementById("how-section")?.scrollIntoView({ behavior: "smooth" })
+    }
+    className="flex items-center space-x-1 text-white hover:text-blue-200 cursor-pointer text-sm"
+  >
+    <span>How It Works</span>
+  </button>
+
+  <button
+    onClick={() =>
+      document.getElementById("faq-section")?.scrollIntoView({ behavior: "smooth" })
+    }
+    className="flex items-center space-x-1 text-white hover:text-blue-200 cursor-pointer text-sm"
+  >
+    <span>FAQs</span>
+  </button>
+
+  <button
+    onClick={() =>
+      document.getElementById("contact-section")?.scrollIntoView({ behavior: "smooth" })
+    }
+    className="flex items-center space-x-1 text-white hover:text-blue-200 cursor-pointer text-sm"
+  >
+    <span>Contact Us</span>
+  </button>
+</div>
+
 
             {/* Action Buttons */}
             <div className="flex items-center space-x-3">
@@ -162,15 +179,15 @@ export default function HomePage() {
         </main>
       </div>
 
-      <WhatMakesAccurascoreDifferent />
+      <WhatMakesAccurascoreDifferent id="why-section" />
 
       <EverythingYouNeedSection />
 
       <TheToolsSection />
 
-      <LovedByPeople />
+      <LovedByPeople id="faq-section" />
 
-      <Footer />
+      <Footer id="contact-section" />
     </>
   );
 }

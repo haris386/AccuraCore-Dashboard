@@ -65,7 +65,7 @@ const faqs = [
   },
 ]
 
-export default function LovedByPeople() {
+export default function LovedByPeople({id}) {
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
   const [openFaq, setOpenFaq] = useState(null)
 
@@ -175,7 +175,7 @@ export default function LovedByPeople() {
           </div>
         </div>
 
-         <div className="mt-25">
+         <div id={id} className="mt-25">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Left Column - FAQ Heading */}
             <div>

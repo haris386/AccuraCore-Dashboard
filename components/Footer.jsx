@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
-export default function Footer() {
+export default function Footer({id}) {
   return (
-    <footer
+    <footer id={id} 
       className="bg-slate-900 py-16 relative overflow-hidden"
       style={{ paddingBottom: "unset" }}
     >
