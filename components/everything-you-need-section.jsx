@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import useEmblaCarousel from "embla-carousel-react";
 
 // Define all available images globally
 const allImages = [
@@ -19,53 +20,45 @@ const allImages = [
     src: "/Images/Boards.png",
     alt: "Boards",
   },
-  { id: "Contact-Profiles", src: "/Images/Contact-Profiles.png", alt: "Contact Profiles Section" },
+  {
+    id: "Contact-Profiles",
+    src: "/Images/Contact-Profiles.png",
+    alt: "Contact Profiles Section",
+  },
   { id: "calendar", src: "/Images/Calendar.png", alt: "Calendar View" },
 ];
 
 // Define tabs, linking to the central image ID
 const tabs = [
-  {
-    id: "Work-Order-Management",
-    label: "Work Order Management",
-    centralImageId: "Work-Order-Management",
-  },
-  {
-    id: "smart-dashboard",
-    label: "Smart Dashboard",
-    centralImageId: "smart-dashboard",
-  },
-  {
-    id: "boards",
-    label: "Boards",
-    centralImageId: "boards",
-  },
-  { id: "Contact-Profiles", label: "Contact Profiles", centralImageId: "Contact-Profiles" },
-  { id: "calendar", label: "Calendar", centralImageId: "calendar" },
+  { id: "Work-Order-Management", label: "Work Order Management" },
+  { id: "smart-dashboard", label: "Smart Dashboard" },
+  { id: "boards", label: "Boards" },
+  { id: "Contact-Profiles", label: "Contact Profiles" },
+  { id: "calendar", label: "Calendar" },
 ];
 
 export default function EverythingYouNeedSection() {
-  const [activeTab, setActiveTab] = useState("smart-dashboard");
+  const [activeTab, setActiveTab] = useState("Work-Order-Management");
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
+    align: "center",
+  });
 
-  const currentTab = tabs.find((tab) => tab.id === activeTab) || tabs[1]; // Default to smart-dashboard
-
-  // Determine the central, left, and right images
-  const centralImageIndex = allImages.findIndex(
-    (img) => img.id === currentTab.centralImageId
-  );
-  const centralImage = allImages[centralImageIndex];
-
-  const leftImageIndex =
-    (centralImageIndex - 1 + allImages.length) % allImages.length;
-  const leftImage = allImages[leftImageIndex];
-
-  const rightImageIndex = (centralImageIndex + 1) % allImages.length;
-  const rightImage = allImages[rightImageIndex];
+  // When active tab changes, scroll carousel to that slide
+  const scrollTo = (id) => {
+    const index = allImages.findIndex((img) => img.id === id);
+    if (emblaApi && index !== -1) {
+      emblaApi.scrollTo(index);
+      setActiveTab(id);
+    }
+  };
 
   return (
-    <section className="py-16 lg:py-20" style={{paddingBottom:0, backgroundColor: "#f4f0ed" }}>
+    <section
+      className="py-16 lg:py-20"
+      style={{ paddingBottom: 0, backgroundColor: "#f4f0ed" }}
+    >
       <div className="w-full">
-        {" "}
         <div
           className="p-8 lg:p-12"
           style={{
@@ -76,13 +69,9 @@ export default function EverythingYouNeedSection() {
         >
           {/* Heading */}
           <div className="text-center mb-8 lg:mb-12 px-4 lg:px-12">
-            {" "}
             <h2
               className="text-white font-bold leading-tight"
-              style={{
-                fontSize: "1.5rem",
-                lineHeight: "1.75rem",
-              }}
+              style={{ fontSize: "1.5rem", lineHeight: "1.75rem" }}
             >
               Everything You Need To
               <br />
@@ -95,7 +84,7 @@ export default function EverythingYouNeedSection() {
             {tabs.map((tab) => (
               <button
                 key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
+                onClick={() => scrollTo(tab.id)}
                 className={`px-4 lg:px-6 py-2 lg:py-3 rounded-full text-sm lg:text-base font-medium transition-all duration-300 whitespace-nowrap text-white`}
                 style={{
                   background:
@@ -117,36 +106,25 @@ export default function EverythingYouNeedSection() {
             ))}
           </div>
 
-          {/* Images Slider */}
-          <div className="relative w-full overflow-hidden rounded-2xl">
-            <div className="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center justify-center h-[500px] relative gap-7">
-              {/* Left Image */}
-              <div className="relative flex justify-end overflow-hidden h-full rounded-xl">
-                <img
-                  src={leftImage.src || "/placeholder.svg"}
-                  alt={leftImage.alt}
-                  className="h-full max-w-none object-contain rounded-xl transition-all duration-500 ease-in-out transform scale-75 translate-x-1/2 opacity-50"
-                />
-              </div>
-
-              {/* Center Image */}
-              <div className="relative flex justify-center h-full">
-                <img
-                  src={centralImage.src || "/placeholder.svg"}
-                  alt={centralImage.alt}
-                  className="h-full object-contain rounded-xl transition-all duration-500 ease-in-out"
-                  style={{ width: "800px" }}
-                />
-              </div>
-
-              {/* Right Image */}
-              <div className="relative flex justify-start overflow-hidden h-full">
-                <img
-                  src={rightImage.src || "/placeholder.svg"}
-                  alt={rightImage.alt}
-                  className="h-full max-w-none object-contain rounded-xl transition-all duration-500 ease-in-out transform scale-75 -translate-x-1/2 opacity-50"
-                />
-              </div>
+          {/* Embla Carousel */}
+          <div className="embla overflow-hidden" ref={emblaRef}>
+            <div className="embla__container flex">
+              {allImages.map((img) => (
+                <div
+                  key={img.id}
+                  className="embla__slide flex-[0_0_55%] flex justify-center items-center px-1"
+                >
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    className={`h-[500px] object-contain rounded-xl transition-transform duration-500 ${
+                      activeTab === img.id
+                        ? "scale-100 opacity-100"
+                        : "scale-75 opacity-50"
+                    }`}
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </div>
