@@ -85,7 +85,7 @@ export default function LovedByPeople({id}) {
     setOpenFaq(openFaq === faqId ? null : faqId)
   }
   return (
-    <section className="py-20 relative overflow-hidden" style={{
+    <section className="py-20 relative overflow-hidden custom-padding" style={{
     background: "linear-gradient(312deg, #faefe9 -17%, #ffffff 100%)"
   }}>
       <div className="container mx-auto px-6 max-w-6xl mb-5">
@@ -94,7 +94,7 @@ export default function LovedByPeople({id}) {
           <img
             src="/Images/Loved-by-people.png"
             alt="Loved by People"
-            className="mx-auto rounded-3xl"
+            className="mx-auto rounded-3xl custom-width"
             style={{ width: "70%" }}
           />
         </div>

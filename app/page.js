@@ -1,13 +1,24 @@
-"use client"; 
+"use client";
+import { useState } from "react";
 import EverythingYouNeedSection from "@/components/everything-you-need-section";
 import Footer from "@/components/Footer";
 import LovedByPeople from "@/components/loved-by-people.jsx";
 import TheToolsSection from "@/components/the-tools-section";
 import { Button } from "@/components/ui/button";
 import WhatMakesAccurascoreDifferent from "@/components/WhatMakesAccurascoreDifferent";
-import { ChevronDown, ArrowRight, LogIn } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 export default function HomePage() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleScroll = (id) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      setMenuOpen(false); // Close menu after click
+    }
+  };
+
   return (
     <>
       <div
@@ -32,54 +43,30 @@ export default function HomePage() {
               />
             </div>
 
-           {/* Navigation Menu */}
-<div className="hidden md:flex items-center space-x-8">
-  <button
-    onClick={() =>
-      document.getElementById("why-section")?.scrollIntoView({ behavior: "smooth" })
-    }
-    className="flex items-center space-x-1 text-white hover:text-blue-200 cursor-pointer text-sm"
-  >
-    <span>Why</span>
-  </button>
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center space-x-8">
+              {[
+                { label: "Why", id: "why-section" },
+                { label: "How It Works", id: "how-section" },
+                { label: "FAQs", id: "faq-section" },
+                { label: "Contact Us", id: "contact-section" },
+              ].map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => handleScroll(item.id)}
+                  className="text-white hover:text-blue-200 text-sm"
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
 
-  <button
-    onClick={() =>
-      document.getElementById("how-section")?.scrollIntoView({ behavior: "smooth" })
-    }
-    className="flex items-center space-x-1 text-white hover:text-blue-200 cursor-pointer text-sm"
-  >
-    <span>How It Works</span>
-  </button>
-
-  <button
-    onClick={() =>
-      document.getElementById("faq-section")?.scrollIntoView({ behavior: "smooth" })
-    }
-    className="flex items-center space-x-1 text-white hover:text-blue-200 cursor-pointer text-sm"
-  >
-    <span>FAQs</span>
-  </button>
-
-  <button
-    onClick={() =>
-      document.getElementById("contact-section")?.scrollIntoView({ behavior: "smooth" })
-    }
-    className="flex items-center space-x-1 text-white hover:text-blue-200 cursor-pointer text-sm"
-  >
-    <span>Contact Us</span>
-  </button>
-</div>
-
-
-            {/* Action Buttons */}
-            <div className="flex items-center space-x-3">
+            {/* Desktop Action Buttons */}
+            <div className="hidden md:flex items-center space-x-3">
               <Button
                 className="bg-white hover:bg-gray-100 px-4 py-2 rounded-full text-sm flex items-center"
-                style={{
-                  padding: "25px 15px",
-                  color: "#0061A4",
-                }}
+                style={{ color: "#0061A4",                     padding: "25px 15px",
+ }}
               >
                 <img
                   src="/Icons/Vector.svg"
@@ -104,7 +91,65 @@ export default function HomePage() {
                 />
               </Button>
             </div>
+
+            {/* Mobile Hamburger */}
+            <div className="md:hidden flex items-center">
+              <button onClick={() => setMenuOpen(!menuOpen)}>
+                {menuOpen ? (
+                  <X className="text-white w-8 h-8" />
+                ) : (
+                  <Menu className="text-white w-8 h-8" />
+                )}
+              </button>
+            </div>
           </nav>
+
+          {/* Mobile Menu */}
+          {menuOpen && (
+            <div className="md:hidden bg-[#51607d] px-6 py-4 space-y-4 rounded-lg mt-2">
+              <div className="flex flex-col space-y-4 text-white text-sm text-center">
+                <span onClick={() => handleScroll("why-section")}>Why</span>
+                <span onClick={() => handleScroll("how-section")}>
+                  How It Works
+                </span>
+                <span onClick={() => handleScroll("faq-section")}>FAQs</span>
+                <span onClick={() => handleScroll("contact-section")}>
+                  Contact Us
+                </span>
+              </div>
+
+              {/* Mobile Action Buttons */}
+              <div className="flex flex-col space-y-3 mt-4">
+                <Button
+                  className="bg-white hover:bg-gray-100 px-4 py-2 rounded-full text-sm flex items-center"
+                  style={{ color: "#0061A4",                     padding: "25px 15px",
+ }}
+                >
+                  <img
+                    src="/Icons/Vector.svg"
+                    alt="Login Icon"
+                    className="w-4 h-4 mr-2"
+                  />
+                  Login
+                </Button>
+
+                <Button
+                  className="text-white rounded-full text-sm flex items-center"
+                  style={{
+                    backgroundColor: "#0061A4",
+                    padding: "25px 15px",
+                  }}
+                >
+                  Book Demo
+                  <img
+                    src="/Icons/Vector.png"
+                    alt="Arrow Icon"
+                    className="w-3 h-4 ml-2"
+                  />
+                </Button>
+              </div>
+            </div>
+          )}
         </header>
 
         {/* Hero Section */}
@@ -122,7 +167,6 @@ export default function HomePage() {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                {/* Book Demo Button */}
                 <Button
                   className="text-white rounded-full text-sm flex items-center"
                   style={{
@@ -139,7 +183,6 @@ export default function HomePage() {
                   />
                 </Button>
 
-                {/* Get Started Free Button */}
                 <Button
                   className="rounded-full text-sm flex items-center"
                   style={{
@@ -165,14 +208,12 @@ export default function HomePage() {
                 className="bg-white/10 backdrop-blur-sm rounded-3xl p-4 shadow-2xl"
                 style={{ border: "2px solid white" }}
               >
-                {/* <div className="bg-white rounded-xl overflow-hidden flex items-center justify-center p-4"> */}
                 <img
                   src="/Images/Hero-image.png"
                   alt="Hero"
                   className="h-auto rounded-3xl"
                   style={{ maxHeight: "500px" }}
                 />
-                {/* </div> */}
               </div>
             </div>
           </div>
@@ -180,13 +221,9 @@ export default function HomePage() {
       </div>
 
       <WhatMakesAccurascoreDifferent id="why-section" />
-
       <EverythingYouNeedSection />
-
       <TheToolsSection />
-
       <LovedByPeople id="faq-section" />
-
       <Footer id="contact-section" />
     </>
   );

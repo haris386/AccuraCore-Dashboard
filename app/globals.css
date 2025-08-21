@@ -120,3 +120,21 @@
     @apply bg-background text-foreground;
   }
 }
+
+@media (max-width: 768px) {
+.header{
+      padding: 10px 5px !important;
+}
+
+.custom-margin{
+  margin-top: 5rem !important;
+}
+
+.custom-width {
+  width:100% !important;
+}
+
+.custom-padding{
+  padding-top: 0 !important;
+}
+}
