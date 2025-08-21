@@ -95,6 +95,119 @@ export default function WhatMakesAccurascoreDifferent({ id }) {
             />
           </div>
         </div>
+
+         {/* Bottom Section - How It Works */}
+        <div id="how-section" className="space-y-12" style={{ width: "90%", margin: "auto" }}>
+          {/* First Row - Heading */}
+          <div className="text-left" style={{ marginTop: "5rem" }}>
+            <h2 className="text-2xl text-gray-900 mb-2">
+              How It Works To Power Your Business
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl">
+              From Setup To Execution — See How Accurascore Simplifies
+              Operations, Streamlines Workflows, And Puts You In Control.
+            </p>
+          </div>
+
+          {/* Second Row - 3 Columns */}
+        <div className="grid md:grid-cols-3 gap-8">
+  {/* Feature 1 */}
+  <div
+    className="group space-y-4 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-300"
+    style={{
+      textAlign: "left",
+      backgroundColor: "white",
+      padding: "20px",
+      borderRadius: "20px",
+    }}
+  >
+    <div
+      className="w-16 h-16 rounded-2xl flex items-center justify-center transition-colors duration-300"
+      style={{
+        backgroundColor: "#0061A5",
+        margin: "unset",
+        marginBottom: "15px",
+      }}
+    >
+      <img src="/Icons/siri.png" alt="siri" />
+    </div>
+    <h3
+      className="text-xl font-semibold text-gray-900"
+      style={{ marginBottom: "5px" }}
+    >
+      Create Your Company
+    </h3>
+    <p className="text-gray-600">
+      Create Your Workspace In Minutes — Then Invite Your Team To Collaborate.
+    </p>
+  </div>
+
+  {/* Feature 2 */}
+  <div
+    className="group space-y-4 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-300"
+    style={{
+      textAlign: "left",
+      backgroundColor: "white",
+      padding: "20px",
+      borderRadius: "20px",
+    }}
+  >
+    <div
+      className="w-16 h-16 rounded-2xl flex items-center justify-center transition-colors duration-300"
+      style={{
+        backgroundColor: "#0061A5",
+        margin: "unset",
+        marginBottom: "15px",
+      }}
+    >
+      <img src="/Icons/workflow.png" alt="workflow" />
+    </div>
+    <h3
+      className="text-xl font-semibold text-gray-900"
+      style={{ marginBottom: "5px" }}
+    >
+      Build Custom Workflows
+    </h3>
+    <p className="text-gray-600">
+      Adapt The Platform To Your Process, Not The Other Way Around No Templates
+      Needed.
+    </p>
+  </div>
+
+  {/* Feature 3 */}
+  <div
+    className="group space-y-4 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-300"
+    style={{
+      textAlign: "left",
+      backgroundColor: "white",
+      padding: "20px",
+      borderRadius: "20px",
+    }}
+  >
+    <div
+      className="w-16 h-16 rounded-2xl flex items-center justify-center transition-colors duration-300"
+      style={{
+        backgroundColor: "#0061A5",
+        margin: "unset",
+        marginBottom: "15px",
+      }}
+    >
+       <img src="/Icons/dashboard-browsing.png" alt="dashboard-browsing" />
+    </div>
+    <h3
+      className="text-xl font-semibold text-gray-900"
+      style={{ marginBottom: "5px" }}
+    >
+      All-in-One Control Panel
+    </h3>
+    <p className="text-gray-600">
+      Stay On Top Of Operations, Finances, And Team Performance All In One
+      Clean Interface.
+    </p>
+  </div>
+</div>
+
+        </div>
       </div>
 
       {/* CSS for Animation */}
