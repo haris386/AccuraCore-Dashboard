@@ -30,14 +30,14 @@ export default function WhatMakesAccurascoreDifferent({ id }) {
     },
     {
       title: "Built-In Financial Intelligence",
-      desc: "Budgeting, Cost Saving, Reporting, All Automated With Robust",
+      desc: "Budgeting, Cost Saving, Reporting, All Automated With Robust Financial Tools",
       Icon: TrendingUp,
     },
   ];
 
   return (
     <section className="px-6 py-16 " style={{ backgroundColor: "#f4f0ed" }}>
-      <div className="max-w-7xl mx-auto custom-margin" style={{ marginTop: "20rem" }}>
+      <div className="max-w-7xl mx-auto custom-margin" style={{ marginTop: "15rem" }}>
         <div id={id} className="grid lg:grid-cols-2 gap-12 mb-16" style={{ width: "90%", margin: "auto" }}>
           
           {/* Left Column */}
@@ -45,7 +45,7 @@ export default function WhatMakesAccurascoreDifferent({ id }) {
             <h2 className="text-2xl text-gray-900 mb-8">
               What Makes
               <br />
-              <strong>Accurascore</strong> Different?
+              <strong>AccuraCore</strong> Different?
             </h2>
 
             {/* Feature Items */}
@@ -104,7 +104,7 @@ export default function WhatMakesAccurascoreDifferent({ id }) {
               How It Works To Power Your Business
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl">
-              From Setup To Execution — See How Accurascore Simplifies
+              From Setup To Execution — See How AccuraCore Simplifies
               Operations, Streamlines Workflows, And Puts You In Control.
             </p>
           </div>

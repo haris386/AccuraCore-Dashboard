@@ -15,7 +15,7 @@ export default function HomePage() {
     const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({ behavior: "smooth", block: "start" });
-      setMenuOpen(false); // Close menu after click
+      setMenuOpen(false); 
     }
   };
 
@@ -160,7 +160,7 @@ export default function HomePage() {
                 Simplify Your Business with Precision
               </h1>
               <p className="text-md text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
-                Accuracore is a powerful platform that brings everything you
+                AccuraCore is a powerful platform that brings everything you
                 need into one dashboard — manage your team, track work orders,
                 handle finances, and stay in control of every detail.
               </p>
