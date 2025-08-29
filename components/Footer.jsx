@@ -4,7 +4,6 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
 export default function Footer({ id, onBookDemo }) {
-
   return (
     <footer
       id={id}
@@ -45,7 +44,7 @@ export default function Footer({ id, onBookDemo }) {
                 padding: "25px 15px",
                 cursor: "pointer",
               }}
-              onClick={onBookDemo} 
+              onClick={onBookDemo}
             >
               Book Demo
               <img
@@ -59,36 +58,59 @@ export default function Footer({ id, onBookDemo }) {
           {/* Right Column */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-gradient-to-br from-[#04213f] to-[#072b4a] border-t-2 border-l-2 border-[#0061A4] rounded-tl-[30px] p-6">
             {/* Contact Info */}
-            <div className="space-y-4">
-              <h3 className="text-white font-semibold text-sm uppercase tracking-wider">
-                CONTACT
-              </h3>
-              <div className="space-y-3">
-                <div className="flex items-center space-x-3 cursor-pointer hover:text-[#0061A4]">
-                  <img
-                    src="/Icons/call-add.png"
-                    alt="Call Icon"
-                    className="w-4 h-4"
-                  />
-                  <span className="text-white text-sm">999-999-999</span>
+            <div className="space-y-6">
+              <div className="space-y-4">
+                <h3 className="text-white font-semibold text-sm uppercase tracking-wider">
+                  CONTACT
+                </h3>
+                <div className="space-y-3">
+                  <div className="flex items-center space-x-3 cursor-pointer hover:text-[#0061A4]">
+                    <img
+                      src="/Icons/call-add.png"
+                      alt="Call Icon"
+                      className="w-4 h-4"
+                    />
+                    <span className="text-white text-sm">(877) 887-7279</span>
+                  </div>
+                  <div className="flex items-center space-x-3 cursor-pointer hover:text-[#0061A4]">
+                    <img
+                      src="/Icons/mail-at-sign-01.png"
+                      alt="Mail Icon"
+                      className="w-4 h-4"
+                    />
+                    <span className="text-white text-sm">
+                      admin@accuracore.com
+                    </span>
+                  </div>
                 </div>
-                <div className="flex items-center space-x-3 cursor-pointer hover:text-[#0061A4]">
-                  <img
-                    src="/Icons/mail-at-sign-01.png"
-                    alt="Mail Icon"
-                    className="w-4 h-4"
-                  />
-                  <span className="text-white text-sm">Accuracore@.com</span>
+              </div>
+
+              {/* Parent Company (below Contact) */}
+              <div className="space-y-4">
+                <h3 className="text-white font-semibold text-sm uppercase tracking-wider">
+                  PARENT COMPANY
+                </h3>
+                <div className="space-y-3">
+                  <div className="flex items-center space-x-3 cursor-pointer hover:text-[#0061A4]">
+                    <a
+                      href="https://www.sparxtech.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white text-sm hover:underline"
+                    >
+                      sparxtech.com
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Follow Us */}
-            <div className="space-y-4">
+            <div className="space-y-4 relative">
               <img
                 src="/Icons/Spiral.png"
                 alt="Spiral Background"
-                className="absolute w-[350px] h-[350px] top-[-110px] left-[70%] z-20 pointer-events-none select-none"
+                className="absolute w-[350px] h-[295px] top-[-120px] right-[24%] z-20 pointer-events-none select-none"
               />
               <h3 className="text-white font-semibold text-sm uppercase tracking-wider">
                 FOLLOW US
