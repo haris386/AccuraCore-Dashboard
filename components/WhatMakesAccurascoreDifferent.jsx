@@ -8,7 +8,7 @@ import {
   TrendingUp,
 } from "lucide-react";
 
-export default function WhatMakesAccurascoreDifferent({ id }) {
+export default function WhatMakesAccurascoreDifferent({ id, onBookDemo }) {
   const [selectedFeature, setSelectedFeature] = useState("Unified Dashboard Experience");
 
   const images = {
@@ -75,6 +75,7 @@ export default function WhatMakesAccurascoreDifferent({ id }) {
                 backgroundColor: "#0061A4",
                 padding: "25px 15px",
               }}
+              onClick={onBookDemo} 
             >
               Book Demo
               <img
