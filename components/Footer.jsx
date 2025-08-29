@@ -78,9 +78,14 @@ export default function Footer({ id, onBookDemo }) {
                       alt="Mail Icon"
                       className="w-4 h-4"
                     />
-                    <span className="text-white text-sm">
+                    <a
+                      href="mailto:admin@accuracore.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white text-sm hover:underline"
+                    >
                       admin@accuracore.com
-                    </span>
+                     </a>
                   </div>
                 </div>
               </div>
