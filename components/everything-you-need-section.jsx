@@ -110,14 +110,14 @@ export default function EverythingYouNeedSection() {
           <div className="embla overflow-hidden" ref={emblaRef}>
             <div className="embla__container flex">
               {allImages.map((img) => (
-                <div
-                  key={img.id}
-                  className="embla__slide flex-[0_0_55%] flex justify-center items-center px-1"
-                >
+               <div
+                key={img.id}
+                className="embla__slide flex-[0_0_100%] md:flex-[0_0_55%] flex justify-center items-center px-1 relative"
+              >
                   <img
                     src={img.src}
                     alt={img.alt}
-                    className={`h-[500px] object-contain rounded-xl transition-transform duration-500 ${
+                    className={`bg-slide w-full h-[300px] md:h-[500px] object-contain rounded-xl transition-transform duration-500 ${
                       activeTab === img.id
                         ? "scale-100 opacity-100"
                         : "scale-75 opacity-50"
