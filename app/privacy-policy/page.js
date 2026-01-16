@@ -552,101 +552,155 @@ export default function PrivacyPolicy() {
                 </p>
 
                 {/* TWO COLS INNER LAYOUT */}
-<div
-  className="mt-6 p-6"
-  style={{
-    backgroundColor: "#F6F6F6",
-    borderRadius: "20px",
-  }}
->
-  <div
-    className="grid grid-cols-1 md:grid-cols-2 gap-6"
-    style={{ gridAutoRows: "1fr" }}
-  >
-    {/* LEFT COLUMN */}
-    <div className="grid grid-rows-5 gap-4">
-      {/* Row 1 */}
-      <div className="rounded-2xl overflow-hidden bg-white h-full flex flex-col">
-        <div
-          className="py-2 text-center text-white text-sm font-medium"
-          style={{ backgroundColor: "#0061A4" }}
-        >
-          Mineral (Physical)
-        </div>
-        <div className="p-4 text-sm text-gray-700 flex-1">
-          Personal information categories listed in the California Customer
-          Records statute such as name, address, telephone number
-        </div>
-      </div>
+                <div
+                  className="mt-6 p-6"
+                  style={{
+                    backgroundColor: "#F6F6F6",
+                    borderRadius: "20px",
+                  }}
+                >
+                  <div
+                    className="grid grid-cols-1 md:grid-cols-2 gap-6"
+                    style={{ gridAutoRows: "1fr" }}
+                  >
+                    {/* LEFT COLUMN */}
+                    <div className="grid grid-rows-5 gap-4">
+                      {/* Row 1 */}
+                      <div className="rounded-2xl overflow-hidden bg-white h-full flex flex-col">
+                        <div
+                          className="py-2 text-center text-white text-sm font-medium"
+                          style={{ backgroundColor: "#0061A4" }}
+                        >
+                          Mineral (Physical)
+                        </div>
+                        <div className="p-4 text-sm text-gray-700 flex-1">
+                          Personal information categories listed in the
+                          California Customer Records statute such as name,
+                          address, telephone number
+                        </div>
+                      </div>
 
-      {/* Row 2 */}
-      <div className="rounded-2xl bg-white p-4 text-sm text-gray-700 h-full">
-        Internet or other similar network activity such as information regarding
-        your interaction with the Platform
-      </div>
+                      {/* Row 2 */}
+                      <div className="rounded-2xl bg-white p-4 text-sm text-gray-700 h-full">
+                        Internet or other similar network activity such as
+                        information regarding your interaction with the Platform
+                      </div>
 
-      {/* Row 3 */}
-      <div className="rounded-2xl bg-white p-4 text-sm text-gray-700 h-full">
-        Geolocation data such as IP address
-      </div>
+                      {/* Row 3 */}
+                      <div className="rounded-2xl bg-white p-4 text-sm text-gray-700 h-full">
+                        Geolocation data such as IP address
+                      </div>
 
-      {/* Row 4 */}
-      <div className="rounded-2xl bg-white p-4 text-sm text-gray-700 h-full">
-        Professional or employment-related information such as title of
-        profession, employer, professional background
-      </div>
+                      {/* Row 4 */}
+                      <div className="rounded-2xl bg-white p-4 text-sm text-gray-700 h-full">
+                        Professional or employment-related information such as
+                        title of profession, employer, professional background
+                      </div>
 
-      {/* Row 5 */}
-      <div className="rounded-2xl bg-white p-4 text-sm text-gray-700 h-full">
-        Account access credentials* such as account log-in, financial account,
-        debit card, or credit card number in combination with any required
-        security or access code, password, or credentials allowing access to
-        your account
-      </div>
-    </div>
+                      {/* Row 5 */}
+                      <div className="rounded-2xl bg-white p-4 text-sm text-gray-700 h-full">
+                        Account access credentials* such as account log-in,
+                        financial account, debit card, or credit card number in
+                        combination with any required security or access code,
+                        password, or credentials allowing access to your account
+                      </div>
+                    </div>
 
-    {/* RIGHT COLUMN */}
-    <div className="grid grid-rows-5 gap-4">
-      {/* Row 1 */}
-      <div className="rounded-2xl overflow-hidden bg-white h-full flex flex-col">
-        <div
-          className="py-2 text-center text-white text-sm font-medium"
-          style={{ backgroundColor: "#555859" }}
-        >
-          Chemical
-        </div>
-        <div className="p-4 text-sm text-gray-700 flex-1">
-          Affiliates, vendors and service providers, including for marketing
-          purposes.
-        </div>
-      </div>
+                    {/* RIGHT COLUMN */}
+                    <div className="grid grid-rows-5 gap-4">
+                      {/* Row 1 */}
+                      <div className="rounded-2xl overflow-hidden bg-white h-full flex flex-col">
+                        <div
+                          className="py-2 text-center text-white text-sm font-medium"
+                          style={{ backgroundColor: "#555859" }}
+                        >
+                          Chemical
+                        </div>
+                        <div className="p-4 text-sm text-gray-700 flex-1">
+                          Affiliates, vendors and service providers, including
+                          for marketing purposes.
+                        </div>
+                      </div>
 
-      {/* Row 2 */}
-      <div className="rounded-2xl bg-white p-4 text-sm text-gray-700 h-full">
-        Affiliates, vendors and service providers, including for marketing
-        purposes.
-      </div>
+                      {/* Row 2 */}
+                      <div className="rounded-2xl bg-white p-4 text-sm text-gray-700 h-full">
+                        Affiliates, vendors and service providers, including for
+                        marketing purposes.
+                      </div>
 
-      {/* Row 3 */}
-      <div className="rounded-2xl bg-white p-4 text-sm text-gray-700 h-full">
-        Affiliates, vendors and service providers, including for marketing
-        purposes.
-      </div>
+                      {/* Row 3 */}
+                      <div className="rounded-2xl bg-white p-4 text-sm text-gray-700 h-full">
+                        Affiliates, vendors and service providers, including for
+                        marketing purposes.
+                      </div>
 
-      {/* Row 4 */}
-      <div className="rounded-2xl bg-white p-4 text-sm text-gray-700 h-full">
-        Affiliates, vendors and service providers, including for marketing
-        purposes.
-      </div>
+                      {/* Row 4 */}
+                      <div className="rounded-2xl bg-white p-4 text-sm text-gray-700 h-full">
+                        Affiliates, vendors and service providers, including for
+                        marketing purposes.
+                      </div>
 
-      {/* Row 5 */}
-      <div className="rounded-2xl bg-white p-4 text-sm text-gray-700 h-full">
-        Affiliates, vendors and service providers.
-      </div>
-    </div>
-  </div>
-</div>
+                      {/* Row 5 */}
+                      <div className="rounded-2xl bg-white p-4 text-sm text-gray-700 h-full">
+                        Affiliates, vendors and service providers.
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
+                <p className="mt-5 mb-4 text-gray-700 text-[14px]">
+                  The specific business or commercial purposes for which we
+                  collect your personal information and the categories of
+                  sources from which we collect your personal information are
+                  described in the section above, Collection and Use Your
+                  Information. We only use and disclose sensitive personal
+                  information for the purposes specified in the CCPA. The
+                  criteria we use to determine how long to retain your personal
+                  information is described in the section above, Data Security
+                  and Retention.
+                </p>
+                <p className="mb-4 text-gray-700 text-[14px]">
+                  We disclosed personal information over the preceding 12 months
+                  for the following business or commercial purposes:
+                </p>
+                <ul className="space-y-4 text-sm text-gray-700 list-disc list-inside">
+                  <li>
+                    To communicate with you, provide you with products and
+                    services, to market to you, etc.
+                  </li>
+                  <li>To maintain and secure your account with us</li>
+                  <li>
+                    To process your payment, to provide you with products or
+                    services you have requested
+                  </li>
+                  <li>
+                    To evaluate your candidacy and process your application for
+                    employment.
+                  </li>
+                </ul>
+
+                <h1 className="text-[17px] font-semibold mt-5 mb-3">
+                  Selling and/or Sharing of Personal Information
+                </h1>
+                <p className="mb-4 text-gray-700 text-[14px]">
+                  <span className="font-bold">
+                    We do not “sell” or “share” (as those terms are defined
+                    under the CCPA) personal information, nor have we done so in
+                    the preceding 12 months. Further,
+                  </span>{" "}
+                  we do not have actual knowledge that we “sell” or “share”
+                  personal information of residents under 16 years of age
+                </p>
+                <h1 className="text-[17px] font-semibold mt-5 mb-3">
+                  Your California Privacy Rights
+                </h1>
+                <p className="mb-4 text-gray-700 text-[14px]">
+                  As a California resident, you may have the rights listed below
+                  in relation to personal information that we have collected
+                  about you. However, these rights are not absolute, and in
+                  certain cases, we may decline your request as permitted by
+                  law.
+                </p>
               </div>
             </div>
           </div>
