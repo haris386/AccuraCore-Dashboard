@@ -504,7 +504,215 @@ export default function TermsandConditions() {
                 </p>
               </div>
 
-              <h1 id="disclaimers" className="text-[20px] font-[500] mt-10 mb-4">
+              <h1
+                id="confidentiality"
+                className="text-[20px] font-[500] mt-10 mb-4"
+              >
+                5. Confidentiality, Ownership, and Content
+              </h1>
+              <div
+                className="px-6 py-6 text-sm text-black leading-relaxed"
+                style={{
+                  backgroundColor: "#ffffff",
+                  borderRadius: "20px",
+                }}
+              >
+                <h1 className="text-[17px] font-semibold mt-5 mb-3">
+                  Confidential Information
+                </h1>
+                <p className="mb-4 text-gray-700 text-[14px]">
+                  In connection with the Services, you may receive or have
+                  access to confidential or proprietary information relating to
+                  AccuraCore and/or its affiliates and licensors, including
+                  software, content, text, graphics, data, pricing, and any
+                  other non-public information or material regarding our legal
+                  or business affairs, customers, properties, or pricing, and
+                  any other information that a reasonable person would
+                  understand to be confidential given the circumstances and
+                  content of the disclosure, whether or not designated as
+                  “confidential” or “proprietary” (collectively, “
+                  <span className="font-bold">Confidential</span>
+                  Information”). You agree to keep our Confidential Information
+                  confidential and to take all steps necessary to prevent
+                  Confidential Information from being disclosed to or obtained
+                  by any person or entity for any purpose except as described in
+                  these Terms. You agree that you are responsible for any breach
+                  of this Section 5.1 by your employees, agents, and
+                  representatives.
+                </p>
+                <h1 className="text-[17px] font-semibold mt-5 mb-3">
+                  Ownership of the Services
+                </h1>
+                <p className="mb-4 text-gray-700 text-[14px]">
+                  The Services, including their “look and feel” (e.g., text,
+                  graphics, images, logos), proprietary content, information,
+                  and other materials, are protected under copyright, trademark,
+                  and other intellectual property laws. You agree that the
+                  Company and/or its licensors own all right, title, and
+                  interest in and to the Services (including any and all
+                  intellectual property rights therein), and you agree not to
+                  take any action(s) inconsistent with such ownership interests.
+                  We and our licensors reserve all rights in connection with the
+                  Services and its content (other than Your Content), including,
+                  without limitation, the exclusive right to create derivative
+                  works.
+                </p>
+
+                <h1 className="text-[17px] font-semibold mt-5 mb-3">
+                  Ownership of Trademarks
+                </h1>
+                <p className="mb-4 text-gray-700 text-[14px]">
+                  We welcome feedback, comments, and suggestions for
+                  improvements to the Services (“
+                  <span className="font-bold">Feedback</span>”). You acknowledge
+                  and expressly agree that any contribution of Feedback does not
+                  and will not give or grant you any right, title, or interest
+                  in the Services or in any such Feedback. All Feedback becomes
+                  the sole and exclusive property of the Company, and the
+                  Company may use and disclose Feedback in any manner and for
+                  any purpose whatsoever without further notice or compensation
+                  to you and without retention by you of any proprietary or
+                  other right or claim. You hereby assign and transfer to the
+                  Company any and all right, title, and interest (including, but
+                  not limited to, any patent, copyright, trade secret,
+                  trademark, show-how, know-how, and any and all other
+                  intellectual property right) that you may have in and to any
+                  and all Feedback, and hereby irrevocably waive all rights
+                  which cannot be assigned, including moral rights.
+                </p>
+                <h1 className="text-[17px] font-semibold mt-5 mb-3">
+                  Your Content License Grant
+                </h1>
+                <p className="mb-4 text-gray-700 text-[14px]">
+                  In connection with your use of the Services, you may be able
+                  to post, upload, or submit content to be made available
+                  through the Services (“
+                  <span className="font-bold">Your Content</span>”). In order to
+                  operate the Service, we must obtain from you certain license
+                  rights in Your Content so that actions we take in operating
+                  the Service are not considered legal violations. Accordingly,
+                  by using the Service and uploading Your Content, you grant us
+                  a license to access, use, host, cache, store, reproduce,
+                  transmit, display, publish, distribute, and modify (for
+                  technical purposes, e.g., making sure content is viewable on
+                  smartphones as well as computers and other devices) Your
+                  Content but solely as required to be able to operate and
+                  provide the Services. You agree that these rights and licenses
+                  are royalty-free, transferable, sub-licensable, worldwide, and
+                  irrevocable (for so long as Your Content is stored with us),
+                  and include a right for us to make Your Content available to,
+                  and pass these rights along to, others with whom we have
+                  contractual relationships related to the provision of the
+                  Services, solely for the purpose of providing such Services,
+                  and to otherwise permit access to or disclose Your Content to
+                  third parties if we determine such access is necessary to
+                  comply with our legal obligations. As part of the foregoing
+                  license grant, you agree that the other users of the Services
+                  shall have the right to comment on and/or tag Your Content
+                  and/or to use, publish, display, modify, or include a copy of
+                  Your Content as part of their own use of the Services; except
+                  that the foregoing shall not apply to any of Your Content that
+                  you post privately for non-public display on the Services. To
+                  the fullest extent permitted by applicable law, the Company
+                  reserves the right, and has absolute discretion, to remove,
+                  screen, edit, or delete any of Your Content at any time, for
+                  any reason, and without notice. By posting or submitting Your
+                  Content through the Services, you represent and warrant that
+                  you have, or have obtained, all rights, licenses, consents,
+                  permissions, power, and/or authority necessary to grant the
+                  rights granted herein for Your Content. You agree that Your
+                  Content will not contain material subject to copyright or
+                  other proprietary rights, unless you have the necessary
+                  permission or are otherwise legally entitled to post the
+                  material and to grant us the license described above.
+                </p>
+                <h1 className="text-[17px] font-semibold mt-5 mb-3">Data</h1>
+                <p className="mb-4 text-gray-700 text-[14px]">
+                  You shall own all right, title, and interest in and to any
+                  data you transfer to the Company for input into the Website (“
+                  <span className="font-bold">Data</span>”), and shall at all
+                  times have sole responsibility for the legality, reliability,
+                  integrity, accuracy, and quality of Data and for ensuring that
+                  its use does not infringe the rights of any third parties. You
+                  hereby grant us a non-exclusive, worldwide, irrevocable,
+                  perpetual, and royalty-free license to reproduce, adapt,
+                  distribute, display, publicly perform, create derivative
+                  works, and use Data. You acknowledge that any derivative works
+                  created based on Data shall be the sole and exclusive property
+                  of the Company.
+                </p>
+              </div>
+
+              <h1 id="thirdParty" className="text-[20px] font-[500] mt-10 mb-4">
+                6. Third-Party Services and Materials
+              </h1>
+              <div
+                className="px-6 py-6 text-sm text-black leading-relaxed"
+                style={{
+                  backgroundColor: "#ffffff",
+                  borderRadius: "20px",
+                }}
+              >
+                <h1 className="text-[17px] font-semibold mt-5 mb-3">
+                  Use of Third-Party Materials in the Services
+                </h1>
+                <p className="mb-4 text-gray-700 text-[14px]">
+                  Certain Services may display, include, or make available
+                  content, data, information, applications, or materials from
+                  third parties (“Third Party Materials”) or provide links to
+                  certain third-party websites. By using the Services, you
+                  acknowledge and agree that the Company is not responsible for
+                  examining or evaluating the content, accuracy, completeness,
+                  availability, timeliness, validity, copyright compliance,
+                  legality, decency, quality, or any other aspect of such
+                  Third-Party Materials, or websites. We do not warrant or
+                  endorse and do not assume and will not have any liability or
+                  responsibility to you or any other person for any third-party
+                  services, Third Party Materials, or third-party websites, or
+                  for any other materials, products, or services of third
+                  parties. Third-Party Materials and links to other websites are
+                  provided solely as a convenience to you.
+                </p>
+                <h1 className="text-[17px] font-semibold mt-5 mb-3">
+                  AI/Machine Learning
+                </h1>
+                <p className="mb-4 text-gray-700 text-[14px]">
+                  Company may use or integrate certain large language models or
+                  other generative AI tools (“
+                  <span className="font-bold">AI Tools</span>”) to provide other
+                  functionalities related to the Services. Data and other
+                  content may be provided to the AI Tools (“
+                  <span className="font-bold">Input</span>”) in order for the AI
+                  Tools to generate certain output (“
+                  <span className="font-bold">Output</span>”). With respect to
+                  third-party AI Tools, your use of such AI Tools, including
+                  your rights in the related Input and Output, is governed by
+                  the terms of service and usage policies of such AI Tools. To
+                  the extent you use the AI Tools, you agree that you: (i) will
+                  not mislead any third party as to AI Tools’ involvement in the
+                  work; (ii) will not use images or other personal information
+                  of individuals as Input without their consent; (iii) will not
+                  use, distribute, post or reproduce any Output that infringes,
+                  misappropriates, or violates any laws or any third party’s
+                  intellectual property rights or rights of publicity or
+                  privacy; (iv) will not use any AI Tools or Output in breach of
+                  any of the terms of service or usage guidelines for such AI
+                  Tools or in violation of any ethical, confidentiality or
+                  fiduciary obligations; and (v) you understand and acknowledge
+                  that the use of any AI Tools is done at your own risk and
+                  Company makes no representation, warranty or guarantee
+                  regarding the accuracy, functionality, security or usefulness
+                  of any third party’s AI Tools. You also acknowledge the
+                  inherent limitations with any AI Tools and agree to review all
+                  output of such AI Tools to ensure its accuracy and
+                  applicability.
+                </p>
+              </div>
+
+              <h1
+                id="disclaimers"
+                className="text-[20px] font-[500] mt-10 mb-4"
+              >
                 7. Disclaimers, Limitations of Liability and Indemnification
               </h1>
               <div
@@ -618,7 +826,10 @@ export default function TermsandConditions() {
                 </p>
               </div>
 
-              <h1 id="arbitration" className="text-[20px] font-[500] mt-10 mb-4">
+              <h1
+                id="arbitration"
+                className="text-[20px] font-[500] mt-10 mb-4"
+              >
                 8. Arbitration and Class Action Waiver
               </h1>
               <div
