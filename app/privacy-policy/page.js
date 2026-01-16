@@ -1,8 +1,45 @@
+"use client"
+import { useRef, useState } from "react";
 import PagesHeader from "@/components/PagesHeader";
 import Footer from "@/components/Footer";
 import { Search } from "lucide-react";
 
+
 export default function PrivacyPolicy() {
+  const [searchTerm, setSearchTerm] = useState("");
+
+  // Map of section IDs to their titles
+  const sections = {
+    changes: "Changes to This Privacy Notice",
+    collection: "Collection and Use of Your Information",
+    disclosure: "Disclosure of Your Information",
+    third: "Third-Party Websites and Links",
+    children: "Children's Privacy",
+    data: "Data Security and Retention",
+    california: "California Residents",
+    resident: "Residents of Other U.S. States",
+    how: "How to Contact Us",
+  };
+
+  const handleSearch = () => {
+    // Find the first section whose title includes the search term
+    const match = Object.entries(sections).find(([id, title]) =>
+      title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    if (match) {
+      const element = document.getElementById(match[0]);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
+  };
+
   return (
     <>
       <section style={{ backgroundColor: "#f4f0ed" }}>
@@ -21,12 +58,18 @@ export default function PrivacyPolicy() {
                   border: "8px solid white",
                 }}
               >
-                <input
-                  type="text"
-                  placeholder="Search"
-                  className="flex-1 bg-transparent outline-none text-sm text-black placeholder-gray-500"
-                />
-                <Search className="w-5 h-5 text-gray-500" />
+               <input
+            type="text"
+            placeholder="Search"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            onKeyDown={handleKeyDown}
+            className="flex-1 bg-transparent outline-none text-sm text-black placeholder-gray-500"
+          />
+          <Search
+            className="w-5 h-5 text-gray-500 cursor-pointer"
+            onClick={handleSearch}
+          />
               </div>
 
               {/* Table of Contents */}
@@ -40,17 +83,15 @@ export default function PrivacyPolicy() {
               >
                 <h3 className="font-[500] text-sm mb-4">Table Of Contents</h3>
 
-                <ol className="space-y-4 text-sm text-gray-700 list-decimal list-inside">
-                  <li>Changes to This Privacy Notice</li>
-                  <li>Collection and Use of Your Information</li>
-                  <li>Disclosure of Your Information</li>
-                  <li>Third-Party Websites and Links</li>
-                  <li>Children&apos;s Privacy</li>
-                  <li>Data Security and Retention</li>
-                  <li>California Residents</li>
-                  <li>Residents of Other U.S. States</li>
-                  <li>How to Contact Us</li>
-                </ol>
+               <ol className="space-y-4 text-sm text-gray-700 list-decimal list-inside">
+            {Object.entries(sections).map(([id, title]) => (
+              <li key={id}>
+                <a href={`#${id}`} className="hover:underline cursor-pointer">
+                  {title}
+                </a>
+              </li>
+            ))}
+          </ol>
               </div>
             </div>
 
@@ -110,7 +151,7 @@ export default function PrivacyPolicy() {
                 </div>
               </div>
 
-              <h1 className="text-[20px] font-[500] mt-10 mb-4">
+              <h1 id="changes" className="text-[20px] font-[500] mt-10 mb-4">
                 1. Changes to This Privacy Notice
               </h1>
               <div
@@ -135,7 +176,7 @@ export default function PrivacyPolicy() {
                 </p>
               </div>
 
-              <h1 className="text-[20px] font-[500] mt-10 mb-4">
+              <h1 id="collection" className="text-[20px] font-[500] mt-10 mb-4">
                 2. Collection and Use of Your Information
               </h1>
               <div
@@ -369,7 +410,7 @@ export default function PrivacyPolicy() {
                 </p>
               </div>
 
-              <h1 className="text-[20px] font-[500] mt-10 mb-4">
+              <h1 id="disclosure" className="text-[20px] font-[500] mt-10 mb-4">
                 3. Disclosure of Your Information
               </h1>
               <div
@@ -430,7 +471,7 @@ export default function PrivacyPolicy() {
                 </p>
               </div>
 
-              <h1 className="text-[20px] font-[500] mt-10 mb-4">
+              <h1 id="third" className="text-[20px] font-[500] mt-10 mb-4">
                 4. Third-Party Websites and Links
               </h1>
               <div
@@ -456,7 +497,7 @@ export default function PrivacyPolicy() {
                 </p>
               </div>
 
-              <h1 className="text-[20px] font-[500] mt-10 mb-4">
+              <h1 id="children" className="text-[20px] font-[500] mt-10 mb-4">
                 5. Children&apos;s Privacy
               </h1>
               <div
@@ -479,7 +520,7 @@ export default function PrivacyPolicy() {
                 </p>
               </div>
 
-              <h1 className="text-[20px] font-[500] mt-10 mb-4">
+              <h1 id="data" className="text-[20px] font-[500] mt-10 mb-4">
                 6. Data Security and Retention
               </h1>
               <div
@@ -520,7 +561,7 @@ export default function PrivacyPolicy() {
                 </p>
               </div>
 
-              <h1 className="text-[20px] font-[500] mt-10 mb-4">
+              <h1 id="california" className="text-[20px] font-[500] mt-10 mb-4">
                 7. California Residents
               </h1>
               <div
@@ -553,14 +594,14 @@ export default function PrivacyPolicy() {
 
                 {/* TWO COLS INNER LAYOUT */}
                 <div
-                  className="mt-6 p-6"
+                  className="mt-6 p-4"
                   style={{
                     backgroundColor: "#F6F6F6",
                     borderRadius: "20px",
                   }}
                 >
                   <div
-                    className="grid grid-cols-1 md:grid-cols-2 gap-6"
+                    className="grid grid-cols-1 md:grid-cols-2 gap-4"
                     style={{ gridAutoRows: "1fr" }}
                   >
                     {/* LEFT COLUMN */}
@@ -701,6 +742,161 @@ export default function PrivacyPolicy() {
                   certain cases, we may decline your request as permitted by
                   law.
                 </p>
+                <ul className="space-y-4 text-sm text-gray-700 list-disc list-inside">
+                  <li>
+                    <span className="font-bold">Right to Know.</span> You have a
+                    right to request the following information about our
+                    collection, use, and disclosure of your personal
+                    information:
+                    <ul className="ml-6 mt-4 space-y-4 text-sm text-gray-700 list-disc list-inside custom-bullets">
+                      <li>
+                        Categories of personal information we have collected,
+                        disclosed for a business purpose;
+                      </li>
+                      <li>
+                        Categories of sources from which we collected personal
+                        information;
+                      </li>
+                      <li>
+                        The business or commercial purposes for collecting
+                        personal information;
+                      </li>
+                      <li>
+                        Categories of third parties to whom the personal
+                        information was disclosed for a business purpose;
+                      </li>
+                      <li>
+                        Specific pieces of personal information we have
+                        collected
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <span className="font-bold">Right to Delete.</span> You have
+                    a right to request that we delete personal information we
+                    maintain about you.
+                  </li>
+                  <li>
+                    <span className="font-bold">Right to Correct.</span> You
+                    have a right to request that we correct inaccurate personal
+                    information we maintain about you.
+                  </li>
+                </ul>
+
+                <p className="mt-5 mb-4 text-gray-700 text-[14px]">
+                  You may exercise any of these rights by contacting us using
+                  the information provided below. We will not discriminate
+                  against you for exercising any of these rights. We may need to
+                  collect information from you to verify your identity, such as
+                  your email address, government-issued ID, or date of birth,
+                  before providing a substantive response to the request. You
+                  may designate, in writing or through a power of attorney
+                  document, an authorized agent to make requests on your behalf
+                  to exercise your rights. Before accepting such a request from
+                  an agent, we will require that the agent provide proof you
+                  have authorized them to act on your behalf, and we may need
+                  you to verify your identity directly with us.
+                </p>
+              </div>
+
+              <h1 id="resident" className="text-[20px] font-[500] mt-10 mb-4">
+                8. Residents of Other U.S. States
+              </h1>
+              <div
+                className="px-6 py-6 text-sm text-black leading-relaxed"
+                style={{
+                  backgroundColor: "#ffffff",
+                  borderRadius: "20px",
+                }}
+              >
+                <p className="mb-4 text-gray-700 text-[14px]">
+                  If you are a California resident, please see the section
+                  above, California Residents, for information on your rights in
+                  relation to information that we have collected about you. If
+                  you are a resident of another U.S. state, depending on the
+                  state you live in, you may have some or all of the rights
+                  listed below in relation to information that we have collected
+                  about you. However, these rights are not absolute, and in
+                  certain cases, we may decline your request as permitted by
+                  law, including in the event you reside in a state that does
+                  not currently grant you these rights.
+                </p>
+
+                <ul className="space-y-4 text-sm text-gray-700 list-disc list-inside">
+                  <li>
+                    <span className="font-bold">Right to Access.</span> You may
+                    have a right to request that we confirm whether we process
+                    information about you and give you access to that
+                    information in a portable and, to the extent technically
+                    feasible, readily usable format that allows you to transmit
+                    the information to another business without impediment.
+                  </li>
+                  <li>
+                    <span className="font-bold">Right to Delete.</span> You may
+                    have a right to request that we delete information we
+                    maintain about you.
+                  </li>
+                  <li>
+                    <span className="font-bold">Right to Correct.</span> You may
+                    have a right to request that we correct inaccurate
+                    information we maintain about you.
+                  </li>
+                </ul>
+
+                <p className="mt-5 mb-4 text-gray-700 text-[14px]">
+                  You may exercise any of these rights by contacting us using
+                  the information provided below. We will not discriminate
+                  against you for exercising any of these rights. We may need to
+                  collect information from you to verify your identity, such as
+                  your email address, government-issued ID, or date of birth,
+                  before providing a substantive response to the request.
+                  Depending on your location, you may designate, in writing or
+                  through a power of attorney document, an authorized agent to
+                  make requests on your behalf to exercise your rights. Before
+                  accepting such a request from an agent, we will require that
+                  the agent provide proof you have authorized them to act on
+                  your behalf, and we may need you to verify your identity
+                  directly with us.
+                </p>
+
+                <p className="mb-4 text-gray-700 text-[14px]">
+                  In addition, you may have the right to appeal our decision
+                  regarding a request related to these rights by contacting us
+                  using the information provided below. When you submit a
+                  request or launch an appeal, we will limit our collection of
+                  your information to only what is necessary to securely fulfill
+                  your request or process your appeal. We will not require you
+                  or your authorized agent to pay a fee for the verification of
+                  your request or appeal.
+                </p>
+              </div>
+
+              <h1 id="how" className="text-[20px] font-[500] mt-10 mb-4">
+                9. How to Contact Us
+              </h1>
+              <div
+                className="px-6 py-6 text-sm leading-relaxed"
+                style={{
+                  borderRadius: "30px",
+                  backgroundImage: `url("/Images/9.png")`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  color: "#ffffff",
+                }}
+              >
+<p className="mb-4 text-white text-[14px]">
+  Should you have any questions about our privacy practices or
+  this Privacy Notice, please email us at{" "}
+  <a
+    href="mailto:support@accuracore.com"
+    className="font-bold underline"
+  >
+    support@accuracore.com
+  </a>{" "}
+  or contact us at AccuraCore, 8910 W 192nd St Unit M, Mokena,
+  IL 60448.
+</p>
+
               </div>
             </div>
           </div>

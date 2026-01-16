@@ -9,7 +9,7 @@ export default function PagesHeader() {
   return (
     <header className="px-6 py-4">
           <nav
-            className="flex items-center justify-between max-w-6xl mx-auto rounded-full px-8 py-4 border border-white/20"
+            className="flex items-center justify-between max-w-7xl mx-auto rounded-full px-8 py-4 border border-white/20"
             style={{ backgroundColor: "white", padding: "5px 30px" }}
           >
             {/* Logo */}
