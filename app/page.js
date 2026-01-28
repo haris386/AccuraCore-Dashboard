@@ -250,7 +250,7 @@ export default function HomePage() {
             </p>
 
             <form
-              action="https://formspree.io/f/mnnbqejn"
+              action="https://formspree.io/f/xkobwzne"
               method="POST"
               className="space-y-5"
             >
