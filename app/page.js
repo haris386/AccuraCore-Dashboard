@@ -211,7 +211,7 @@ export default function HomePage() {
                 style={{ border: "2px solid white" }}
               >
                 <img
-                  src="/Images/Hero-image.png"
+                  src="/Images/Hero-image2.png"
                   alt="Hero"
                   className="h-auto rounded-3xl"
                   style={{ maxHeight: "500px" }}

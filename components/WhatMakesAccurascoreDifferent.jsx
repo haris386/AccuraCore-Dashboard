@@ -30,7 +30,7 @@ export default function WhatMakesAccurascoreDifferent({ id, onBookDemo }) {
     },
     {
       title: "Built-In Financial Intelligence",
-      desc: "Budgeting, Cost Saving, Reporting, All Automated With Robust Financial Tools",
+      desc: "Budgeting, Estimates, Invoicing All Accurate And Audit-Ready.",
       Icon: TrendingUp,
     },
   ];
