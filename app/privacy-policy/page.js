@@ -42,7 +42,7 @@ export default function PrivacyPolicy() {
 
   return (
     <>
-      <section style={{ backgroundColor: "#f4f0ed" }}>
+      <section className="bg-gray-50 dark:bg-[linear-gradient(50deg,_#020617_0%,_#0f172a_100%)] transition-colors duration-300">
         <PagesHeader />
 
         {/* TWO COLS LAYOUT */}
@@ -52,9 +52,8 @@ export default function PrivacyPolicy() {
             <div className="lg:col-span-4 space-y-6">
               {/* Search Input */}
               <div
-                className="flex items-center rounded-full px-4 py-3"
+                className="flex items-center rounded-full px-4 py-3 bg-gray-100 dark:bg-gray-800 border border-white dark:border-gray-700 transition-colors duration-300"
                 style={{
-                  backgroundColor: "#F8F8F8",
                   border: "8px solid white",
                 }}
               >
@@ -73,25 +72,23 @@ export default function PrivacyPolicy() {
               </div>
 
               {/* Table of Contents */}
-              <div
-                className="p-5"
+              <div className="p-5 bg-gray-100 dark:bg-gray-800 rounded-2xl transition-colors duration-300"
                 style={{
-                  backgroundColor: "#F8F8F8",
                   border: "10px solid white",
                   borderRadius: "20px",
                 }}
               >
                 <h3 className="font-[500] text-sm mb-4">Table Of Contents</h3>
 
-               <ol className="space-y-4 text-sm text-gray-700 list-decimal list-inside">
-            {Object.entries(sections).map(([id, title]) => (
-              <li key={id}>
-                <a href={`#${id}`} className="hover:underline cursor-pointer">
-                  {title}
-                </a>
-              </li>
-            ))}
-          </ol>
+               <ol className="space-y-4 text-sm text-gray-700 dark:text-gray-300 list-decimal list-inside">
+                  {Object.entries(sections).map(([id, title]) => (
+                    <li key={id}>
+                      <a href={`#${id}`} className="hover:underline cursor-pointer">
+                        {title}
+                      </a>
+                    </li>
+                  ))}
+                </ol>
               </div>
             </div>
 

@@ -1,16 +1,27 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { useTheme } from "next-themes";
+import { Sun, Moon } from "lucide-react";
+import ModeToggle from "./mode-toggle";
 
 export default function PagesHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  // To prevent hydration mismatch
+  useEffect(() => setMounted(true), []);
+  if (!mounted) return null;
 
   return (
     <header className="px-6 py-4">
       <nav
-        className="flex items-center justify-between max-w-7xl mx-auto rounded-full px-8 py-4 border border-white/20"
-        style={{ backgroundColor: "white", padding: "5px 30px" }}
+        className={`flex items-center justify-between max-w-7xl mx-auto rounded-full px-8 py-4 border ${
+          theme === "dark" ? "border-white/20 bg-gray-900" : " bg-white"
+        }`}
+        style={{ padding: "5px 30px" }}
       >
         {/* Logo */}
         <div className="flex items-center space-x-2">
@@ -32,7 +43,9 @@ export default function PagesHeader() {
             <button
               key={item.id}
               onClick={() => handleScroll(item.id)}
-              className="text-black hover:text-blue-200 text-sm"
+              className={`text-sm ${
+                theme === "dark" ? "text-white hover:text-blue-400" : "text-black hover:text-blue-600"
+              }`}
             >
               {item.label}
             </button>
@@ -41,6 +54,14 @@ export default function PagesHeader() {
 
         {/* Desktop Action Buttons */}
         <div className="hidden md:flex items-center space-x-3">
+             <div className="
+  p-2 rounded-full 
+  bg-slate-900 dark:bg-white 
+  text-white dark:text-slate-900
+  flex items-center justify-center
+">
+  <ModeToggle />
+</div>
           <Button
             className="bg-white hover:bg-gray-100 px-4 py-2 rounded-full text-sm flex items-center shadow-md"
             style={{ color: "#0061A4", padding: "25px 15px" }}
@@ -71,7 +92,15 @@ export default function PagesHeader() {
         </div>
 
         {/* Mobile Hamburger */}
-        <div className="md:hidden flex items-center">
+<div className="md:hidden flex items-center gap-3">
+                       <div className="
+            p-2 rounded-full 
+            bg-slate-900 dark:bg-white 
+            text-white dark:text-slate-900
+            flex items-center justify-center
+          ">
+            <ModeToggle />
+          </div>
           <button onClick={() => setMenuOpen(!menuOpen)}>
             {menuOpen ? (
               <X className="text-black w-8 h-8" />
