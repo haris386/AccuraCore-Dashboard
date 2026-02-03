@@ -36,43 +36,54 @@ export default function WhatMakesAccurascoreDifferent({ id, onBookDemo }) {
   ];
 
   return (
-    <section className="px-6 py-16 " style={{ backgroundColor: "#f4f0ed" }}>
+    <section className="px-6 py-16 bg-[#f4f0ed] dark:bg-slate-950">
       <div className="max-w-7xl mx-auto custom-margin" style={{ marginTop: "15rem" }}>
         <div id={id} className="grid lg:grid-cols-2 gap-12 mb-16" style={{ width: "90%", margin: "auto" }}>
           
           {/* Left Column */}
           <div className="space-y-8">
-            <h2 className="text-2xl text-gray-900 mb-8">
-              What Makes
-              <br />
+            <h2 className="text-2xl text-gray-900 dark:text-white">
+              What Makes <br />
               <strong>AccuraCore</strong> Different?
             </h2>
 
             {/* Feature Items */}
             <div className="space-y-6">
-              {features.map((feature, idx) => (
+{features.map((feature, idx) => (
                 <div
                   key={idx}
                   onClick={() => setSelectedFeature(feature.title)}
-                  className={`group flex items-start space-x-4 bg-white p-3 rounded-lg mb-4 transition-all duration-300 transform hover:scale-105 hover:shadow-[0_8px_25px_rgba(0,97,165,0.3)] cursor-pointer ${
-                    selectedFeature === feature.title ? "border-2 border-[#0061a5]" : ""
-                  }`}
+                  className={`
+                    group flex items-start space-x-4 p-4 rounded-xl cursor-pointer transition-all duration-300 transform hover:scale-105 bg-white dark:bg-slate-900 hover:shadow-[0_8px_25px_rgba(0,97,165,0.3)]
+                     ${
+                      selectedFeature === feature.title
+                        ? "border-2 border-[#0061a5]"
+                        : "border border-transparent"
+                    }
+                  `}
                 >
-                  <div className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-300 bg-[#f6f6f6] group-hover:bg-[#0061a5]">
-                    <feature.Icon className="w-6 h-6 text-gray-800 transition-all duration-300 group-hover:text-white" />
+                  <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-slate-100 dark:bg-slate-800 group-hover:bg-[#0061a5] transition-all">
+                    <feature.Icon className="
+                      w-6 h-6 text-gray-800 dark:text-slate-200
+                      group-hover:text-white
+                    " />
                   </div>
+
                   <div>
-                    <h3 className="text-md font-semibold text-gray-700 mb-1">{feature.title}</h3>
-                    <p className="text-gray-600">{feature.desc}</p>
+                    <h3 className="text-md font-semibold text-gray-800 dark:text-white">
+                      {feature.title}
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-400">
+                      {feature.desc}
+                    </p>
                   </div>
                 </div>
               ))}
             </div>
 
             <Button
-              className="text-white rounded-full text-sm flex items-center"
+              className="rounded-full text-sm flex items-center text-white bg-[#0061A4] hover:bg-[#00548f]"
               style={{
-                backgroundColor: "#0061A4",
                 padding: "25px 15px",
               }}
               onClick={onBookDemo} 
@@ -101,10 +112,10 @@ export default function WhatMakesAccurascoreDifferent({ id, onBookDemo }) {
         <div id="how-section" className="space-y-12" style={{ width: "90%", margin: "auto" }}>
           {/* First Row - Heading */}
           <div className="text-left" style={{ marginTop: "5rem" }}>
-            <h2 className="text-2xl text-gray-900 mb-2">
+            <h2 className="text-2xl text-gray-900 dark:text-white mb-2">
               How It Works To Power Your Business
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl">
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl">
               From Setup To Execution — See How AccuraCore Simplifies
               Operations, Streamlines Workflows, And Puts You In Control.
             </p>
@@ -112,101 +123,41 @@ export default function WhatMakesAccurascoreDifferent({ id, onBookDemo }) {
 
           {/* Second Row - 3 Columns */}
         <div className="grid md:grid-cols-3 gap-8">
-  {/* Feature 1 */}
-  <div
-    className="group space-y-4 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-300"
-    style={{
-      textAlign: "left",
-      backgroundColor: "white",
-      padding: "20px",
-      borderRadius: "20px",
-    }}
-  >
-    <div
-      className="w-16 h-16 rounded-2xl flex items-center justify-center transition-colors duration-300"
-      style={{
-        backgroundColor: "#0061A5",
-        margin: "unset",
-        marginBottom: "15px",
-      }}
-    >
-      <img src="/Icons/siri.png" alt="siri" />
-    </div>
-    <h3
-      className="text-xl font-semibold text-gray-900"
-      style={{ marginBottom: "5px" }}
-    >
-      Create Your Company
-    </h3>
-    <p className="text-gray-600">
-      Create Your Workspace In Minutes — Then Invite Your Team To Collaborate.
-    </p>
-  </div>
+            {[
+              {
+                title: "Create Your Company",
+                desc: "Create your workspace and invite your team.",
+                icon: "/Icons/siri.png",
+              },
+              {
+                title: "Build Custom Workflows",
+                desc: "Adapt the platform to your process.",
+                icon: "/Icons/workflow.png",
+              },
+              {
+                title: "All-in-One Control Panel",
+                desc: "Operations, finances & team in one place.",
+                icon: "/Icons/dashboard-browsing.png",
+              },
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="bg-white dark:bg-slate-900 p-6 rounded-2xl space-y-4 transition-all duration-300 hover:scale-105 hover:shadow-xl"
+              >
+                <div className="w-16 h-16 rounded-2xl bg-[#0061A5] flex items-center justify-center">
+                  <img src={item.icon} alt={item.title} />
+                </div>
 
-  {/* Feature 2 */}
-  <div
-    className="group space-y-4 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-300"
-    style={{
-      textAlign: "left",
-      backgroundColor: "white",
-      padding: "20px",
-      borderRadius: "20px",
-    }}
-  >
-    <div
-      className="w-16 h-16 rounded-2xl flex items-center justify-center transition-colors duration-300"
-      style={{
-        backgroundColor: "#0061A5",
-        margin: "unset",
-        marginBottom: "15px",
-      }}
-    >
-      <img src="/Icons/workflow.png" alt="workflow" />
-    </div>
-    <h3
-      className="text-xl font-semibold text-gray-900"
-      style={{ marginBottom: "5px" }}
-    >
-      Build Custom Workflows
-    </h3>
-    <p className="text-gray-600">
-      Adapt The Platform To Your Process, Not The Other Way Around No Templates
-      Needed.
-    </p>
-  </div>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                  {item.title}
+                </h3>
 
-  {/* Feature 3 */}
-  <div
-    className="group space-y-4 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-300"
-    style={{
-      textAlign: "left",
-      backgroundColor: "white",
-      padding: "20px",
-      borderRadius: "20px",
-    }}
-  >
-    <div
-      className="w-16 h-16 rounded-2xl flex items-center justify-center transition-colors duration-300"
-      style={{
-        backgroundColor: "#0061A5",
-        margin: "unset",
-        marginBottom: "15px",
-      }}
-    >
-       <img src="/Icons/dashboard-browsing.png" alt="dashboard-browsing" />
-    </div>
-    <h3
-      className="text-xl font-semibold text-gray-900"
-      style={{ marginBottom: "5px" }}
-    >
-      All-in-One Control Panel
-    </h3>
-    <p className="text-gray-600">
-      Stay On Top Of Operations, Finances, And Team Performance All In One
-      Clean Interface.
-    </p>
-  </div>
-</div>
+                <p className="text-gray-600 dark:text-gray-400">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
 
         </div>
       </div>

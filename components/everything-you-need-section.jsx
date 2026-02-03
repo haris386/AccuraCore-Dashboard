@@ -55,12 +55,12 @@ export default function EverythingYouNeedSection() {
 
   return (
     <section
-      className="py-16 lg:py-20"
-      style={{ paddingBottom: 0, backgroundColor: "#f4f0ed" }}
+      className="py-16 lg:py-20 bg-[#f4f0ed] dark:bg-slate-950"
+      style={{ paddingBottom: 0 }}
     >
       <div className="w-full">
         <div
-          className="p-8 lg:p-12"
+          className="p-8 lg:p-12 "
           style={{
             background: "radial-gradient(circle, #2f5071 0%, #162c44 100%)",
             paddingLeft: 0,

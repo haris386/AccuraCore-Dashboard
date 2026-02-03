@@ -146,3 +146,7 @@ html {
 .custom-bullets li::marker {
   color: #0061A4;
 }
+
+body {
+  @apply bg-white text-black dark:bg-slate-950 dark:text-slate-100;
+}

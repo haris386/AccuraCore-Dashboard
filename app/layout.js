@@ -1,21 +1,25 @@
-import { Sora, Outfit } from 'next/font/google';
-import './globals.css';
+import { Sora, Outfit } from "next/font/google"
+import "./globals.css"
+import { ThemeProvider } from "@/components/theme-provider"
 
-// Configure fonts
-const sora = Sora({ subsets: ['latin'], weight: ['400', '700'] });
-const outfit = Outfit({ subsets: ['latin'], weight: ['400', '700'] });
+// Fonts
+const sora = Sora({ subsets: ["latin"], weight: ["400", "700"] })
+const outfit = Outfit({ subsets: ["latin"], weight: ["400", "700"] })
 
 export const metadata = {
-  title: 'AccuraCore',
+  title: "AccuraCore",
 }
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      {/* Apply Outfit globally to body */}
+    <html lang="en" suppressHydrationWarning>
       <body className={outfit.className}>
-        <div className={sora.className}>{children}</div>
+        <ThemeProvider>
+          <div className={sora.className}>
+            {children}
+          </div>
+        </ThemeProvider>
       </body>
     </html>
-  );
+  )
 }

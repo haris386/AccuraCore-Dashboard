@@ -89,10 +89,14 @@ export default function LovedByPeople({ id }) {
   };
   return (
     <section
-      className="py-20 relative overflow-hidden custom-padding"
-      style={{
-        background: "linear-gradient(312deg, #faefe9 -17%, #ffffff 100%)",
-      }}
+      className="
+        py-20 relative overflow-hidden custom-padding
+        bg-[linear-gradient(312deg,_#faefe9_-17%,_#ffffff_100%)]
+        dark:bg-[linear-gradient(50deg,_#020617_0%,_#0f172a_100%)]
+      "
+      // style={{
+      //   background: "linear-gradient(312deg, #faefe9 -17%, #ffffff 100%)",
+      // }}
     >
       <div className="container mx-auto px-6 max-w-6xl mb-5">
         {/* First Row - Hero Section */}
@@ -109,7 +113,7 @@ export default function LovedByPeople({ id }) {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Left Column - FAQ Heading */}
             <div>
-              <h3 className="text-2xl  text-gray-900 mb-2">
+              <h3 className="text-2xl  text-gray-900 dark:text-gray-100 mb-2">
                 Frequently
                 <br />
                 <strong>Asked</strong> Questions
@@ -118,21 +122,34 @@ export default function LovedByPeople({ id }) {
 
             {/* Right Column - FAQ Items */}
             <div className="space-y-4">
-              {faqs.map((faq) => (
+             {faqs.map((faq) => (
                 <div
                   key={faq.id}
-                  className="bg-white p-[25px] rounded-[10px] border-none"
+                  className="
+                    p-[25px] rounded-[10px]
+                    bg-white
+                    dark:bg-slate-900
+                    border border-transparent
+                    dark:border-slate-700
+                    transition-colors
+                  "
                 >
                   <button
                     onClick={() => toggleFaq(faq.id)}
-                    className="w-full flex justify-between items-center text-left hover:text-blue-600 transition-colors duration-200"
+                    className="
+                      w-full flex justify-between items-center text-left
+                      text-gray-900 dark:text-gray-100
+                      hover:text-blue-600 dark:hover:text-blue-400
+                      transition-colors duration-200
+                    "
                     style={{cursor:"pointer"}}
                   >
-                    <span className="text-sm font-medium text-gray-900 pr-4">
+                    <span className="text-sm font-medium pr-4">
                       {faq.question}
                     </span>
+
                     <svg
-                      className={`w-5 h-5 text-gray-500 transform transition-transform duration-200 flex-shrink-0 ${
+                      className={`w-5 h-5 text-gray-500 dark:text-gray-400 transform transition-transform duration-200 ${
                         openFaq === faq.id ? "rotate-180" : ""
                       }`}
                       fill="none"
@@ -148,16 +165,15 @@ export default function LovedByPeople({ id }) {
                     </svg>
                   </button>
 
-                  {/* FAQ Answer */}
+                  {/* Answer */}
                   <div
                     className={`overflow-hidden transition-all duration-300 ${
                       openFaq === faq.id
                         ? "max-h-96 opacity-100"
                         : "max-h-0 opacity-0"
                     }`}
-                    
                   >
-                    <div className="pb-4 text-gray-600 leading-relaxed text-sm" style={{marginTop:"15px"}}>
+                    <div className="pt-4 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
                       {faq.answer}
                     </div>
                   </div>

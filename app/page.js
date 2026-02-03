@@ -7,6 +7,7 @@ import TheToolsSection from "@/components/the-tools-section";
 import { Button } from "@/components/ui/button";
 import WhatMakesAccurascoreDifferent from "@/components/WhatMakesAccurascoreDifferent";
 import { Menu, X } from "lucide-react";
+import ModeToggle from "@/components/mode-toggle";
 
 export default function HomePage() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -32,8 +33,8 @@ export default function HomePage() {
         {/* Header */}
         <header className="px-6 py-4">
           <nav
-            className="flex items-center justify-between max-w-6xl mx-auto rounded-full px-8 py-4 border border-white/20"
-            style={{ backgroundColor: "#51607d", padding: "5px 30px" }}
+            className="flex items-center justify-between max-w-6xl mx-auto rounded-full px-8 py-4 border border-white/20 bg-[#51607d] dark:bg-slate-900"
+            style={{padding: "5px 30px" }}
           >
             {/* Logo */}
             <div className="flex items-center space-x-2">
@@ -64,6 +65,15 @@ export default function HomePage() {
 
             {/* Desktop Action Buttons */}
             <div className="hidden md:flex items-center space-x-3">
+             <div className="
+  p-2 rounded-full 
+  bg-slate-900 dark:bg-white 
+  text-white dark:text-slate-900
+  flex items-center justify-center
+">
+  <ModeToggle />
+</div>
+
               <Button
                 className="bg-white hover:bg-gray-100 px-4 py-2 rounded-full text-sm flex items-center"
                 style={{ color: "#0061A4", padding: "25px 15px" }}
@@ -94,15 +104,28 @@ export default function HomePage() {
             </div>
 
             {/* Mobile Hamburger */}
-            <div className="md:hidden flex items-center">
-              <button onClick={() => setMenuOpen(!menuOpen)}>
-                {menuOpen ? (
-                  <X className="text-white w-8 h-8" />
-                ) : (
-                  <Menu className="text-white w-8 h-8" />
-                )}
-              </button>
-            </div>
+<div className="md:hidden flex items-center gap-3">
+  {/* Dark Mode Toggle */}
+ <div className="
+  p-2 rounded-full 
+  bg-slate-900 dark:bg-white 
+  text-white dark:text-slate-900
+  flex items-center justify-center
+">
+  <ModeToggle />
+</div>
+
+
+  {/* Hamburger */}
+  <button onClick={() => setMenuOpen(!menuOpen)}>
+    {menuOpen ? (
+      <X className="text-white w-8 h-8" />
+    ) : (
+      <Menu className="text-white w-8 h-8" />
+    )}
+  </button>
+</div>
+
           </nav>
 
           {/* Mobile Menu */}
@@ -233,19 +256,19 @@ export default function HomePage() {
       {/* Popup Modal */}
       {isOpen && (
         <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
-          <div className="bg-white rounded-3xl p-6 lg:p-8 shadow-xl w-[90%] max-w-[600px] max-h-[90vh] overflow-y-auto relative">
+          <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 lg:p-8 shadow-xl w-[90%] max-w-[600px] max-h-[90vh] overflow-y-auto relative">
             {/* Close Button */}
             <button
               onClick={() => setIsOpen(false)}
-              className="absolute top-4 right-4 text-gray-500 hover:text-gray-800"
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white"
             >
               ✕
             </button>
 
-            <h3 className="text-md lg:text-md text-center text-gray-900 mb-2">
+            <h3 className="text-md lg:text-md text-center text-gray-900 mb-2 dark:text-white">
               Registration Form
             </h3>
-            <p className="text-gray-500 text-sm mb-6 text-center">
+            <p className="text-gray-500 text-sm mb-6 text-center dark:text-gray-400">
               Please fill out this form with the required information
             </p>
 
@@ -258,7 +281,7 @@ export default function HomePage() {
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-sm font-medium text-gray-700 mb-1"
+                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
                 >
                   Name
                 </label>
@@ -275,7 +298,7 @@ export default function HomePage() {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-gray-700 mb-1"
+                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
                 >
                   Email
                 </label>
@@ -292,7 +315,7 @@ export default function HomePage() {
               <div>
                 <label
                   htmlFor="phone"
-                  className="block text-sm font-medium text-gray-700 mb-1"
+                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
                 >
                   Phone
                 </label>
@@ -308,7 +331,7 @@ export default function HomePage() {
               <div>
                 <label
                   htmlFor="company"
-                  className="block text-sm font-medium text-gray-700 mb-1"
+                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
                 >
                   Company
                 </label>
@@ -322,7 +345,7 @@ export default function HomePage() {
 
               {/* Software of Interest */}
               <div>
-                <p className="text-sm font-medium text-gray-700 mb-2">
+              <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Software of Interest
                 </p>
                 <div className="space-y-2">
@@ -334,7 +357,7 @@ export default function HomePage() {
                       className="h-4 w-4 text-blue-500 border-gray-300 rounded"
                     />
                     <span
-                      className="ml-2 text-gray-700"
+                     className="ml-2 text-gray-700 dark:text-gray-300"
                       style={{ fontSize: "13px" }}
                     >
                       AccuraCore
@@ -348,7 +371,7 @@ export default function HomePage() {
                       className="h-4 w-4 text-blue-500 border-gray-300 rounded"
                     />
                     <span
-                      className="ml-2 text-gray-700"
+                      className="ml-2 text-gray-700 dark:text-gray-300"
                       style={{ fontSize: "13px" }}
                     >
                       ClaimCore
@@ -362,7 +385,7 @@ export default function HomePage() {
                       className="h-4 w-4 text-blue-500 border-gray-300 rounded"
                     />
                     <span
-                      className="ml-2 text-gray-700"
+                      className="ml-2 text-gray-700 dark:text-gray-300"
                       style={{ fontSize: "13px" }}
                     >
                       AccuraCam
